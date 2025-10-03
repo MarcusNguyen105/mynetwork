@@ -69,59 +69,38 @@ def compute(expr: str):
 
 def main():
     s = socket.socket()
-    s.setblocking(False)
-    try:
-        s.connect((HOST, PORT))
-    except BlockingIOError:
-        pass  # expected for nonblocking connect
+    s.settimeout(0.05)
+    s.connect((HOST, PORT))
 
     buf = ""
-    answered = set()
     start = time.time()
-    # Run up to 60 seconds or until we see a flag
-    while time.time() - start < 60:
-        # Wait a short time for readability
-        rlist, _, _ = select.select([s], [], [], 0.2)
-        if rlist:
-            try:
-                data = s.recv(8192)
-                if not data:
+    # Run up to 90 seconds or until we see a flag
+    while time.time() - start < 90:
+        try:
+            data = s.recv(8192)
+            if not data:
+                break
+            buf += data.decode(errors="ignore")
+        except Exception:
+            # No data right now; try to answer based on what we have
+            pass
+
+        # Identify the current question right before "Your answer"
+        m = re.search(r"([A-Za-z0-9 \-]+\?)\s*\nYour answer", buf, re.I)
+        if not m:
+            # Fallback: the last question mark preceded by the question emoji
+            m = re.search(r"\u2753\s*([A-Za-z0-9 \-]+\?)", buf)
+        if m:
+            q = m.group(1)
+            ans = compute(q)
+            if ans is not None:
+                try:
+                    s.sendall((str(ans) + "\n").encode())
+                    # Keep only the tail to avoid re-answering
+                    buf = buf[-1000:]
+                except Exception:
                     break
-                buf += data.decode(errors="ignore")
-            except BlockingIOError:
-                pass
 
-        # Find all math questions prefixed by the prompt marker
-        for m in re.finditer(r"\u2753\s*([A-Za-z0-9\- ]+\?)", buf):  # '❓'
-            q = m.group(1)
-            if q in answered:
-                continue
-            ans = compute(q)
-            if ans is None:
-                continue
-            try:
-                s.sendall((str(ans) + "\n").encode())
-                answered.add(q)
-            except (BrokenPipeError, OSError):
-                break
-
-        # Also handle questions that may not include the symbol
-        for m in re.finditer(r"([A-Za-z0-9 \-]+\?)\s*\nYour answer", buf, re.I):
-            q = m.group(1)
-            if q in answered:
-                continue
-            ans = compute(q)
-            if ans is None:
-                continue
-            try:
-                s.sendall((str(ans) + "\n").encode())
-                answered.add(q)
-            except (BrokenPipeError, OSError):
-                break
-
-        # Trim buffer
-        if len(buf) > 6000:
-            buf = buf[-3000:]
         if re.search(r"(USCC\{|CTF\{|FLAG\{)", buf, re.I):
             print(buf)
             break
