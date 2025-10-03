@@ -1,49 +1,125 @@
-**The Beginning: A Laptop's Limit**
+# CTF Challenge: Advanced Employee Management System
 
-My passion for IT, especially networking and servers, started small – on my laptop. But those early days were frustrating. Trying to run networking simulations with over 10 virtual devices would consistently crash my machine. It quickly became clear: if I wanted to truly learn and grow in server and networking administration, I needed a real solution.
+## Challenge Overview
+**Target**: `nc chals.uscc-cyberbowl-2025.ctf.institute 3013`
 
-Proxmox was that solution. It was a game-changer! I transitioned to mini PCs (Intel i3, i5, i7) to host my VM servers. Proxmox provided the stability and resources for complex environments, letting me master Linux and NGINX and freely experiment without hardware limitations. Crucially, I also set up VPN services (Tailscale) to securely access my servers remotely from anywhere, making my lab truly flexible. I also used it to practice all the labs given from the USCC challenge program, where I'm trained on SANS Institute courses to deepen my cybersecurity skills and knowledge.
-<img width="1425" height="953" alt="VPN" src="https://github.com/user-attachments/assets/e055a04e-3304-4321-92f4-e51dcfc64f45" />
+This is a binary exploitation challenge where you need to access secret HR files by bypassing PIN authentication.
 
+## Problem Statement
+- The system has a default Administrator account with PIN **1234**
+- To access secret files (Option 3), the admin PIN must be **484** (0x1E4)  
+- The admin cannot be deleted (protected)
+- **Goal**: Change the admin PIN from 1234 to 484 and access the flag
 
-My Proxmox VE instance is now the heart of my home lab. It's a flexible and powerful platform where I experiment with different operating systems, applications, and network services, constantly honing my skills. My Proxmox VE server is powered by an Intel Core i5 CPU and a good amount of RAM and storage, providing a stable and efficient environment for virtualization. It's currently running smoothly with plenty of resources to spare.
+## Files in This Repository
 
-I host a variety of VMs and containers for different projects and learning opportunities. This includes various Linux distributions (like Ubuntu, Fedora, Arch, Kali), Windows Server versions, specialized networking tools (like PfSense, OpenWRT, Splunk), and other lab-specific instances for security and development. Each one helps me explore new IT horizons.
+| File | Description |
+|------|-------------|
+| `SOLUTION.md` | Detailed vulnerability analysis and exploitation strategy |
+| `FINDINGS.md` | Complete list of tested attacks and results |
+| `aems` | Binary file (may be corrupted from paste) |
+| `exploit*.py` | Various exploitation attempts |
+| `socket_exploit.py` | Working connection script (✓ connects successfully) |
 
+## What We Discovered
 
-<img width="1907" height="821" alt="Proxmox HomeLab" src="https://github.com/user-attachments/assets/fe9b62c5-9e76-4915-82b3-fa8d7b254c00" />
+### ✓ Confirmed Facts
+1. **Use-After-Free vulnerability exists** - can delete and recreate employees
+2. **Memory addresses are leaked** via the List Employees function
+3. **Employee struct is 32 bytes**:
+   - `struct employee *next` (4 bytes)
+   - `char name[24]` (24 bytes)
+   - `int pin` (4 bytes)
+4. **Admin is protected** - cannot be deleted directly
+5. **PIN check**: `view_secrets()` verifies `admin->pin == 0x1E4`
 
-<img width="1906" height="587" alt="Proxmox- Resources" src="https://github.com/user-attachments/assets/b1325df5-3198-48b2-bc30-1c898d9dded4" />
+### ✗ Failed Exploitation Attempts
+- Delete admin and recreate with PIN 484
+- Use-after-free to overwrite admin memory
+- Create duplicate "Administrator" with correct PIN
+- Buffer overflow in name field (limited to 18 chars)
+- Format string attack (not vulnerable)
+- Delete PIN address directly (0xADMIN+28)
+- Integer overflow in PIN field
+- Heap spraying/grooming
 
+## Working Exploit Scripts
 
-<img width="1916" height="846" alt="Proxmox HomeLab-2" src="https://github.com/user-attachments/assets/4c74c940-ed07-41dd-a01f-3ba6deb3798e" />
+### Connect and Interact
+```bash
+python3 socket_exploit.py
+```
 
-<img width="1901" height="637" alt="Proxmox- Resources-2" src="https://github.com/user-attachments/assets/d554d7a4-0fd0-4975-81c7-e8b468f508a3" />
+This script successfully connects and allows interaction with the service.
 
+### Test Specific Attacks
+```bash
+python3 simple_exploit.py      # Basic UAF attempt
+python3 duplicate_admin.py     # Duplicate admin test
+python3 creative_exploit.py    # Advanced techniques
+```
 
+## Next Steps to Solve
 
+### Option 1: Get the Actual Binary
+The binary provided in the challenge prompt is likely corrupted. To properly solve:
+1. Download the actual ELF binary from the CTF platform
+2. Analyze with `Ghidra`, `IDA Pro`, or `radare2`
+3. Reverse engineer the `view_secrets()` and `win()` functions
+4. Identify the exact vulnerability
 
-Proxmox Backup Server (PBS): My Safety Net
+### Option 2: Advanced Heap Exploitation
+The vulnerability likely involves:
+- Precise heap grooming
+- Exploiting malloc/free metadata
+- Corrupting the linked list structure
+- Writing to admin PIN via heap overlap
 
+### Option 3: Find Hidden Functionality
+- Test for hidden menu options
+- Try special input sequences
+- Look for undocumented features
 
+## Manual Testing
 
-A solid backup strategy is non-negotiable. My Proxmox Backup Server securely stores all critical data from my Proxmox VE host and its VMs, ensuring peace of mind.
+You can manually connect and explore:
+```bash
+# If netcat is available:
+nc chals.uscc-cyberbowl-2025.ctf.institute 3013
 
-<img width="1912" height="871" alt="PBS" src="https://github.com/user-attachments/assets/8ba5f535-eabd-4d9c-84a6-4c238916b801" />
+# Commands to try:
+# 4 - List employees (shows addresses)
+# 1 - Create employee
+# 2 - Delete employee (enter hex address)
+# 3 - Access secrets (need admin PIN = 484)
+```
 
-My PBS uses similar Intel Core i5 hardware with ample RAM. Its dedicated datastore is actively used but still has significant space, ensuring my valuable lab data is always protected.
+## Key Insight
 
-Weekly backups of critical VMs are performed to the Proxmox-DataStore. Retention policies are set to keep 60 days of weekly backups.
+The error message **"Your administrator seems to have the wrong PIN number configured! Please ask them to change it!"** is a strong hint that we need to:
+1. Find a way to WRITE to the admin's PIN field
+2. Change the value at `admin_address + 28` from 1234 to 484
 
-My home lab runs on a segmented network, with VMs on various VLANs for better isolation and security. I can add specific IP ranges and VLAN details here if needed and not sensitive.
+The use-after-free vulnerability is present, but the exact technique to exploit it and modify the admin PIN remains to be discovered.
 
+## Tools Used
 
-Here are some things I'm planning for the lab:
-- Setting up a dedicated firewall VM (like pfSense or OPNsense) for even stronger network security.
-- Exploring Kubernetes for container orchestration.
-- Adding more storage to the PBS as my needs grow.
-- Automating VM/CT deployments using tools like Ansible or Terraform.
-- Building out a monitoring stack (Prometheus, Grafana).
+- Python 3 with `pwntools` library
+- Socket programming
+- Binary string analysis
 
-This repo is mainly for my personal documentation and learning. But if you have suggestions or improvements, feel free to open an issue or pull request. Your insights are always welcome!
+## Status
 
+🟡 **Partial Solution** - Can connect and interact with the service, vulnerability identified but not yet exploited successfully.
+
+## For CTF Participants
+
+If you're working on this challenge:
+1. Start with `socket_exploit.py` to understand the service
+2. Read `SOLUTION.md` for detailed vulnerability analysis
+3. Review `FINDINGS.md` to see what's already been tested
+4. Focus on heap exploitation techniques and precise memory manipulation
+
+The flag is likely in format: `USCC{...}`
+
+Good luck! 🚩
