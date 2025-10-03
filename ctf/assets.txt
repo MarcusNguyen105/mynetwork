@@ -1,0 +1,4 @@
+https://fonts.googleapis.com
+https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Comic+Relief:wght@400;700&display=swap
+https://fonts.gstatic.com
+./styles.css

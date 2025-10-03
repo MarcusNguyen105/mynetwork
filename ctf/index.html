@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VaguePosting.........</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="./styles.css" />
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-content">
+                <span>📱</span>
+                <span>hackergurl's Buddy List</span>
+            </div>
+            <div class="title-buttons">
+                <button class="title-button">-</button>
+                <button class="title-button">□</button>
+                <button class="title-button close-button">✕</button>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <span class="menu-item">My AIM</span>
+            <span class="menu-item">People</span>
+            <span class="menu-item">Help</span>
+        </div>
+        <div class="logo-area">
+            <div class="logo-placeholder"></div>
+            <span class="logo-text">AIL Instant Messenger™</span>
+        </div>
+        <div class="buddy-list">
+            <div class="buddy-category">
+                <div class="category-header buddies-header" onclick="toggleSection('buddies')">
+                    <span id="buddies-arrow">▼</span> Buddies (0/0)
+                </div>
+                <div id="buddies-list" class="buddy-list-items">
+                </div>
+            </div>
+            
+            <div class="buddy-category">
+                <div class="category-header" onclick="toggleSection('family')">
+                    <span id="family-arrow">▶</span> Family (0/0)
+                </div>
+                <div id="family-list" class="buddy-list-items hidden">
+                </div>
+            </div>
+            
+            <div class="buddy-category">
+                <div class="category-header" onclick="toggleSection('coworkers')">
+                    <span id="coworkers-arrow">▶</span> Co-Workers (0/0)
+                </div>
+                <div id="coworkers-list" class="buddy-list-items hidden">
+                </div>
+            </div>
+            
+            <div class="buddy-category">
+                <div class="category-header offline-header" onclick="toggleSection('offline')">
+                    <span id="offline-arrow">▼</span> Offline (<span id="offline-count">12</span>/0)
+                </div>
+                <div id="offline-list" class="buddy-list-items">
+                    <div class="buddy-item">xXSkaterBoi2006Xx</div>
+                    <div class="buddy-item">emo_princess_4eva</div>
+                    <div class="buddy-item">RaWrXD_sarah</div>
+                    <div class="buddy-item">basketball_mike21</div>
+                    <div class="buddy-item">angelic_dreams99</div>
+                    <div class="buddy-item">punkrock_rebel</div>
+                    <div class="buddy-item">phantom0fth30pera</div>
+                    <div class="buddy-item">gamer_dude_420</div>
+                    <div class="buddy-item">dancingqueen00</div>
+                    <div class="buddy-item">metallicaSux</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-area">
+            <div class="button-row">
+                <button class="aim-button">IM</button>
+                <button class="aim-button">Chat</button>
+                <button class="aim-button">Write</button>
+                <button class="aim-button">Info</button>
+                <button class="aim-button">Setup</button>
+            </div>
+            <div class="button-row">
+                <button class="aim-button">Read</button>
+                <button class="aim-button">Today</button>
+                <button class="aim-button" onclick="showAwayDialog()">Away</button>
+                <button class="aim-button">Prefs</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="away-dialog" class="dialog-overlay">
+        <div class="dialog">
+            <div class="title-bar">
+                <span>Edit Away Message</span>
+                <button class="title-button close-button" onclick="hideAwayDialog()">✕</button>
+            </div>
+
+            <div class="dialog-content">
+                <div class="form-group">
+                    <label class="form-label">Enter label:</label>
+                    <select class="form-select">
+                        <option>Default Away Message</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Enter new Away message:</label>
+                    
+                    <div class="toolbar">
+                        <button class="toolbar-button" style="color: #2563eb; font-weight: bold;">A</button>
+                        <button class="toolbar-button" style="color: #2563eb; font-weight: bold; background-color: #dbeafe;">A</button>
+                        <button class="toolbar-button">A▼</button>
+                        <button class="toolbar-button" style="font-weight: bold;">A</button>
+                        <button class="toolbar-button">🗛A</button>
+                        <div class="toolbar-separator"></div>
+                        <button class="toolbar-button" style="font-weight: bold;">B</button>
+                        <button class="toolbar-button" style="font-style: italic;">I</button>
+                        <button class="toolbar-button" style="text-decoration: underline;">U</button>
+                        <div class="toolbar-separator"></div>
+                        <button class="toolbar-button" style="color: #2563eb; text-decoration: underline;">link</button>
+                        <button class="toolbar-button">😊</button>
+                    </div>
+
+                    <textarea id="away-message" class="message-textarea">do you ever feel like breaking down?
+do you ever feel out of place?
+
+like somehow you just don't belong.......
+                    </textarea>
+                </div>
+
+                <div class="special-chars">
+                    <div>Special Characters:</div>
+                    <div>%n = Screen name of buddy</div>
+                    <div>%d = Current date</div>
+                    <div>%t = Current time</div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" />
+                            Save for later use
+                        </label>
+                    </div>
+                </div>
+
+                <div class="dialog-buttons">
+                    <button class="dialog-button" onclick="saveAwayMessage()">I'm Away</button>
+                    <button class="dialog-button" onclick="hideAwayDialog()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="debug-info" class="debug-info hidden">
+        <strong>Last saved message:</strong> <span id="saved-message-text"></span>
+    </div>
+
+    <script>
+        const collapsedSections = {
+            buddies: false,
+            family: true,
+            coworkers: true,
+            offline: false
+        };
+
+        function toggleSection(section) {
+            collapsedSections[section] = !collapsedSections[section];
+            const arrow = document.getElementById(section + '-arrow');
+            const list = document.getElementById(section + '-list');
+            
+            if (collapsedSections[section]) {
+                arrow.textContent = '▶';
+                list.classList.add('hidden');
+            } else {
+                arrow.textContent = '▼';
+                list.classList.remove('hidden');
+            }
+        }
+
+        function showAwayDialog() {
+            document.getElementById('away-dialog').style.display = 'flex';
+        }
+
+        function hideAwayDialog() {
+            document.getElementById('away-dialog').style.display = 'none';
+        }
+
+        async function saveAwayMessage() {
+            const awayMessage = document.getElementById('away-message').value;
+            
+            try {
+                const response = await fetch('/api/latest/template', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        template: awayMessage,
+                        data: {
+                            username: 'hackergurl',
+                            time: new Date().toLocaleTimeString(),
+                            date: new Date().toLocaleDateString()
+                        }
+                    })
+                });
+                
+                if (response.ok) {
+                    const debugInfo = document.getElementById('debug-info');
+                    document.getElementById('saved-message-text').textContent = awayMessage;
+                    debugInfo.classList.remove('hidden');
+                    hideAwayDialog();
+                    alert('Away message saved successfully!');
+                    
+                    // fade out for dramatic but vague effect............. will you even miss this debug info..... 
+                    debugInfo.classList.add('fade-out');
+                } else {
+                    alert('Failed to save away message');
+                }
+            } catch (error) {
+                alert('Error saving away message: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
