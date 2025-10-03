@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoPocket - Video and Image Sharing</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+</head>
+<body>
+    <div class="top-nav">
+        <a href="/">home</a> | <a href="/purchase.php">login</a>
+    </div>
+
+    <div class="header">
+        <div class="logo">
+            <div class="logo img" style="background: #4a90e2; width: 40px; height: 40px; border-radius: 5px; margin-right: 10px;"><img src="./assets/images/logo.png"></div>
+            <div>
+                <div class="logo-text">PhotoPocket</div>
+                <div class="tagline">Video and Image Sharing</div>
+            </div>
+        </div>
+        <div class="search-section">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="login-box">
+            <div class="login-header" style="color: #333;">member login</div>
+            <div class="login-form">
+                <label>username</label>
+                <input type="text" value="">
+                
+                <label>password</label>
+                <input type="password" value="">
+                
+                <div style="margin: 10px 0;">
+                    <input type="checkbox" id="remember">
+                    <label for="remember" style="display: inline;">remember me!</label>
+                </div>
+                
+                <button type="submit" class="login-btn" onclick="ignoreInputAndAskForMoney()">log in</button>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <div class=""><img width="250px" height="auto"  src="./assets/images/create.png"></div>
+            <div>
+                <div class="feature-title">create</div>
+                <div class="feature-desc">albums, slideshows, & prints</div>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <div class=""><img width="250px" height="auto" src="./assets/images/link.png"></div>
+            <div>
+                <div class="feature-title">link</div>
+                <div class="feature-desc">to websites, email, & IM</div>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <div class=""><img width="250px" height="auto" src="./assets/images/share.png"></div>
+            <div>
+                <div class="feature-title">share</div>
+                <div class="feature-desc">your videos & images</div>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="description-box">
+                <p>PhotoPocket provides free video and photo sharing. Easily host and link your images and videos to social networks, auction sites, blogs, and message boards. PhotoPocket is reliable and very easy to use. <a href="/purchase.php" style="color: #4a90e2;">Give it a try!</a></p>
+            </div>
+            <div class="tv-box">
+                <img class="" src="./assets/images/watch.png">
+            </div>
+        </div>
+
+        <div class="contest-banner">
+            <div class="contest-title">PhotoPocket summer contest</div>
+            <div class="contest-subtitle">Enter now to win the Grand Prize of $2500 and iPod Videos & xbox 360s weekly</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="/">about us</a> |
+            <a href="/">affiliate</a> |
+            <a href="/">contact us</a> |
+            <a href="/">forums</a> |
+            <a href="/">site map</a> |
+            <a href="/">terms of service</a>
+        </div>
+        <div class="copyright">
+            Copyright © 2003-2006 PhotoPocket Inc. All rights reserved.
+        </div>
+    </div>
+    <script>
+        function ignoreInputAndAskForMoney() {
+            window.location.href = '/purchase.php';
+        }
+    </script>
+</body>
+</html>
