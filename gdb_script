@@ -1,0 +1,9 @@
+
+set disassembly-flavor intel
+break vuln
+run
+continue
+x/20x $rsp
+x/20x $rbp
+info registers
+continue
