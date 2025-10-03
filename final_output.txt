@@ -1,0 +1,110 @@
+Attempting final comprehensive exploit...
+This will try multiple exploit techniques:
+
+[1] Testing format string vulnerabilities...
+[2] Brute forcing win function addresses...
+    Testing addresses from 0x08048000 to 0x08049000...
+  Trying offset 12...
+    Tested 100 combinations...
+    Tested 200 combinations...
+  Trying offset 16...
+    Tested 300 combinations...
+    Tested 400 combinations...
+    Tested 500 combinations...
+  Trying offset 20...
+    Tested 600 combinations...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+    Tested 700 combinations...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+  Trying offset 24...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+    Tested 800 combinations...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+    Tested 900 combinations...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+    Tested 1000 combinations...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+  Trying offset 28...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+    Tested 1100 combinations...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+    Tested 1200 combinations...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+  Trying offset 32...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+    Tested 1300 combinations...
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
+[ERROR] Could not connect to chals.uscc-cyberbowl-2025.ctf.institute on port 3015
