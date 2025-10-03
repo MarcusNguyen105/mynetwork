@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoPocket - Video and Image Sharing</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+</head>
+
+<body>
+    <div class="top-nav">
+        <a href="/">home</a> | <a href="/purchase.php">login</a>
+    </div>
+
+    <div class="header">
+        <div class="logo">
+            <div class="logo img"
+                style="background: #4a90e2; width: 40px; height: 40px; border-radius: 5px; margin-right: 10px;"><img
+                    src="./assets/images/logo.png"></div>
+            <div>
+                <div class="logo-text">PhotoPocket</div>
+                <div class="tagline">Video and Image Sharing</div>
+            </div>
+        </div>
+        <div class="search-section">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="login-box">
+            <div class="description-box">
+                <p>PhotoPocket provides free video and photo sharing. Easily host and link your images and videos to
+                    social networks, auction sites, blogs, and message boards. PhotoPocket is reliable and very easy to
+                    use. <a href="/purchase.php" style="color: #4a90e2;">Give it a try!</a></p>
+            </div>
+
+        </div>
+
+        <div class="upload-box">
+            <div class="upload-alert">ACCOUNT INFORMATION NOT FOUND</div>
+            <div class="upload-body">
+                <span>Your account with us has expired and must pay a membership fee in order to view photos. Please
+                    send us money.</span>
+                <br><br>
+                <strong>FAQ</strong>
+                <br>
+                Q: Wait, didn't I agree to share my photos with your site because it says "free sharing"?
+                <br>
+                A: Yes. But we need money now.
+                <br><br>
+                Q: Shouldn't you at least update your website then?
+                <br>
+                A: Does it look like we have funding to keep things up to date?
+            </div>
+            <div class="upload-footnote">Alternatively, if you have proof of receipt (upload a JPG below), we will grant
+                account access. </div>
+            <div class="upload-file">
+                <form action="purchase.php" id="receiptUpload" method="post" enctype="multipart/form-data">
+                    <div class="">
+                        <label class="form-label btn">Upload proof of purchase</label>
+                        <input type="file" name="receiptPhoto" id="receiptPhoto">
+                        <input class="form-label btn" type="submit" value="Upload" name="submit">
+                    </div>
+
+                    <div id="message" class="form-group row spacer message">
+                        <div class='upload-error'>Receipt photo is not a JPG.&nbsp;</div><div class='upload-error'>Receipt was not uploaded, try again.&nbsp;</div>                    </div>
+                </form>
+                <div>
+                                    </div>
+
+            </div>
+        </div>
+
+        <div class="bottom-section purchase-page">
+            <div class="feature-box">
+                <div class=""><img width="250px" height="auto" src="./assets/images/watch.png"></div>
+                <div>
+                    <div class="feature-title">watch</div>
+                    <div class="feature-desc">uploaded videos online</div>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <div class=""><img width="250px" height="auto" src="./assets/images/create.png"></div>
+                <div>
+                    <div class="feature-title">create</div>
+                    <div class="feature-desc">albums, slideshows, & prints</div>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <div class=""><img width="250px" height="auto" src="./assets/images/link.png"></div>
+                <div>
+                    <div class="feature-title">link</div>
+                    <div class="feature-desc">to websites, email, & IM</div>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <div class=""><img width="250px" height="auto" src="./assets/images/share.png"></div>
+                <div>
+                    <div class="feature-title">share</div>
+                    <div class="feature-desc">your videos & images</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contest-banner">
+            <div class="contest-title">PhotoPocket summer contest</div>
+            <div class="contest-subtitle">Enter now to win the Grand Prize of $2500 and iPod Videos & xbox 360s weekly
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="/">about us</a> |
+            <a href="/">affiliate</a> |
+            <a href="/">contact us</a> |
+            <a href="/">forums</a> |
+            <a href="/">site map</a> |
+            <a href="/">terms of service</a>
+        </div>
+        <div class="copyright">
+            Copyright © 2003-2006 PhotoPocket Inc. All rights reserved.
+        </div>
+    </div>
+</body>
+
+</html>
