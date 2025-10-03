@@ -1,0 +1,30 @@
+I need more information to successfully exploit this challenge. Could you provide:
+
+1. **vuln function disassembly**: 
+   Run: objdump -d jat | grep -A30 "<vuln>:"
+   
+2. **win function details**:
+   Run: objdump -d jat | grep -A20 "<win>:"
+   (Does it take any arguments? What does it do?)
+
+3. **Security features**:
+   Run: checksec jat
+   (Are there stack canaries, NX, PIE enabled?)
+
+4. **Buffer size in vuln function**:
+   Look for: sub esp, 0x?? 
+   This tells us the stack allocation size
+
+5. **main function**:
+   Run: objdump -d jat | grep -A50 "<main>:"
+   (How does it call vuln?)
+
+OR
+
+Simply provide the actual binary file if possible, and I can analyze it myself.
+
+Current status:
+- Win address: 0x080486b6 ✓
+- Offset: Unknown ❌
+- Vulnerability location: Unknown ❌
+- Stack protections: Unknown ❌
