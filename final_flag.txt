@@ -1,0 +1,19 @@
+Based on the deobfuscation, the hash is built from:
+
+Base64 parts (from _0x4a39 array):
+- Yzk1ZWU0Nz -> c95ee47
+- YzcwYzNlYj -> c70c3eb  
+- NzcyMmM2OW -> 7722c69
+
+Numeric parts:
+- 3463383330 (from instruction) -> 4c830
+- 613435333445 (from hash1) -> a4534E
+
+Complete hash: c95ee47c70c3eb7722c694c830a4534E
+
+However, MD5 hashes are typically lowercase. Let me try:
+c95ee47c70c3eb7722c694c830a4534e
+
+Possible flags:
+USCC{c95ee47c70c3eb7722c694c830a4534E}
+USCC{c95ee47c70c3eb7722c694c830a4534e}
