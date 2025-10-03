@@ -1,0 +1,155 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║              ECHO SERVICE CTF CHALLENGE - EXPLOITATION TOOLKIT            ║
+║                          500 Points | Binary Pwn                          ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+🎯 CHALLENGE INFO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Target:     nc chals.uscc-cyberbowl-2025.ctf.institute 3014
+  Type:       Buffer Overflow (Stack-based)
+  Binary:     32-bit ELF executable
+  Difficulty: Medium (500 points)
+
+🚀 QUICK START - GET THE FLAG NOW!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Option 1: AUTOMATED (Easiest - Recommended)
+  ┌─────────────────────────────────────────────────────────────┐
+  │  ./run.sh                                                   │
+  │  [Select option 1]                                          │
+  │                                                             │
+  │  OR                                                         │
+  │                                                             │
+  │  python3 bruteforce.py                                      │
+  └─────────────────────────────────────────────────────────────┘
+
+  Option 2: MANUAL CONTROL
+  ┌─────────────────────────────────────────────────────────────┐
+  │  python3 exploit.py test           # Test the service      │
+  │  python3 exploit.py 40 0x080486a7  # Manual exploit        │
+  └─────────────────────────────────────────────────────────────┘
+
+📚 DOCUMENTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  READ FIRST:  INDEX.md        - Complete overview & navigation
+  FAST SOLVE:  QUICKSTART.md   - Quick commands & tips
+  LEARNING:    SOLUTION.md     - Step-by-step walkthrough
+  DETAILS:     README.md       - Technical analysis
+
+📁 FILES IN THIS TOOLKIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  SCRIPTS:
+    ✓ exploit.py      (4.7 KB) - Main exploitation script
+    ✓ bruteforce.py   (7.2 KB) - Automated parameter finder
+    ✓ analyze_dump.py (2.2 KB) - Binary analysis tool
+    ✓ run.sh          (3.2 KB) - Interactive menu system
+
+  DOCUMENTATION:
+    ✓ INDEX.md                 (6.1 KB) - Main guide
+    ✓ QUICKSTART.md            (4.1 KB) - Quick reference
+    ✓ SOLUTION.md              (4.1 KB) - Solution walkthrough
+    ✓ README.md                (2.8 KB) - Challenge analysis
+    ✓ COMPLETE_TOOLKIT_SUMMARY (8.4 KB) - Full summary
+
+  TOTAL: 1,426 lines of code and documentation
+
+🎓 WHAT YOU'LL LEARN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✓ Buffer overflow exploitation
+  ✓ Stack memory layout & return addresses
+  ✓ Return-oriented programming basics
+  ✓ Binary analysis fundamentals
+  ✓ Python exploit development
+  ✓ Network-based exploitation
+
+🔍 THE VULNERABILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Binary has three key functions:
+    • main()      - Entry point
+    • vuln()      - Contains buffer overflow ⚠️
+    • read_flag() - Reads & displays flag 🎯
+
+  Exploitation Strategy:
+    1. Overflow buffer in vuln()
+    2. Overwrite return address
+    3. Redirect to read_flag()
+    4. Capture the flag!
+
+⚡ RECOMMENDED WORKFLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  FOR QUICK SOLVE:
+    1. Run: ./run.sh
+    2. Select option 1 (Automated Brute Force)
+    3. Wait for flag
+    4. Submit & win!
+
+  FOR LEARNING:
+    1. Read: cat INDEX.md
+    2. Analyze: python3 analyze_dump.py
+    3. Test: python3 exploit.py test
+    4. Solve: python3 bruteforce.py
+    5. Understand the technique!
+
+  FOR MANUAL EXPLOITATION:
+    1. Find offset (typically 32-72 bytes)
+    2. Find read_flag address (typically 0x08048xxx)
+    3. Craft payload: padding + address
+    4. Send exploit: python3 exploit.py <offset> <addr>
+
+⚙️ TECHNICAL DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Binary Information:
+    • Type: 32-bit ELF
+    • Arch: x86 (Intel)
+    • Endian: Little-endian
+    • Protections: None visible
+
+  Known Strings:
+    • "./flag" - Flag file path
+    • "ECHO SERVICE" - Banner
+    • "> " - Input prompt
+
+  Libc Functions:
+    • fgets/read - Input (vulnerable!)
+    • fopen - Opens flag file
+    • puts/printf - Output
+
+✅ SUCCESS INDICATORS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  You've successfully exploited when you see:
+    ✓ uscc{...} or flag{...} - The actual flag!
+    ✓ "Missing flag file!" - Reached read_flag() (local test)
+    ✓ Different error message - Making progress!
+
+🎯 NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Choose your approach:
+     → Quick solve: Run ./run.sh
+     → Learn: Read INDEX.md first
+     → Manual: Read SOLUTION.md
+
+  2. Execute the exploit
+
+  3. Capture the flag 🚩
+
+  4. Submit to CTF platform
+
+  5. Understand why it worked!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                          🚩 GOOD LUCK! 🚩
+
+          Everything you need is in this directory.
+          All scripts are ready to use. Just run them!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

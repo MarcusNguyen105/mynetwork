@@ -1,0 +1,234 @@
+================================================================================
+          ECHO SERVICE CTF CHALLENGE - COMPLETE EXPLOITATION TOOLKIT
+================================================================================
+
+Challenge: Echo Service (500 points)
+Category: Binary Exploitation
+Target: nc chals.uscc-cyberbowl-2025.ctf.institute 3014
+
+================================================================================
+                              WHAT'S INCLUDED
+================================================================================
+
+EXPLOITATION SCRIPTS (3):
+  ✓ exploit.py      - Main exploitation script with multiple modes
+  ✓ bruteforce.py   - Automated brute force to find correct parameters  
+  ✓ analyze_dump.py - Analyzes the binary dump for useful information
+
+DOCUMENTATION (4):
+  ✓ INDEX.md        - Main overview and navigation (START HERE!)
+  ✓ QUICKSTART.md   - Fast reference for quick solutions
+  ✓ SOLUTION.md     - Detailed solution walkthrough with explanations
+  ✓ README.md       - Challenge analysis and vulnerability details
+
+================================================================================
+                            QUICK START GUIDE
+================================================================================
+
+FASTEST WAY TO SOLVE:
+  cd /workspace/echo_service
+  python3 bruteforce.py
+
+MANUAL EXPLOITATION:
+  cd /workspace/echo_service
+  python3 exploit.py <offset> <address>
+  Example: python3 exploit.py 40 0x080486a7
+
+TEST THE SERVICE:
+  cd /workspace/echo_service
+  python3 exploit.py test
+
+VIEW BINARY ANALYSIS:
+  cd /workspace/echo_service
+  python3 analyze_dump.py
+
+================================================================================
+                          HOW THE EXPLOIT WORKS
+================================================================================
+
+VULNERABILITY: Buffer Overflow in vuln() function
+
+EXPLOITATION FLOW:
+  1. Connect to the service
+  2. Service prompts for input with "> "
+  3. Send payload: [PADDING] + [read_flag ADDRESS]
+  4. Overflow overwrites the return address
+  5. Function returns to read_flag() instead of caller
+  6. read_flag() opens "./flag" and prints the contents
+  7. Receive the flag!
+
+REQUIRED PARAMETERS:
+  • Offset: Number of bytes to reach return address (32-72 typical)
+  • Address: Memory location of read_flag() function (0x08048xxx typical)
+
+================================================================================
+                          RECOMMENDED WORKFLOW
+================================================================================
+
+FOR QUICK SOLUTION:
+  1. Read QUICKSTART.md
+  2. Run: python3 bruteforce.py
+  3. Wait for the flag
+  4. Submit to CTF platform
+
+FOR LEARNING:
+  1. Read INDEX.md for overview
+  2. Read README.md for vulnerability analysis  
+  3. Read SOLUTION.md for detailed walkthrough
+  4. Try manual exploitation with exploit.py
+  5. Understand why it works
+
+FOR MANUAL EXPLOITATION:
+  1. Run: python3 exploit.py test
+  2. Analyze the service behavior
+  3. Try different offsets: python3 bruteforce.py offset 0x080486a7
+  4. Try different addresses: python3 bruteforce.py address 40
+  5. Craft final exploit once parameters are found
+
+================================================================================
+                            KEY INFORMATION
+================================================================================
+
+BINARY TYPE: 32-bit ELF executable
+ARCHITECTURE: x86 (little-endian)
+KNOWN FUNCTIONS:
+  • main()      - Entry point
+  • vuln()      - Contains buffer overflow vulnerability
+  • read_flag() - Target function that reads the flag
+
+KNOWN STRINGS:
+  • "./flag"           - Flag file path
+  • "ECHO SERVICE"     - Service banner
+  • "> "               - Input prompt
+  • "Invalid command:" - Error message
+
+LIBC FUNCTIONS USED:
+  • fgets/read  - Input (potentially vulnerable)
+  • fopen       - Opens flag file
+  • puts/printf - Displays output
+
+================================================================================
+                          TROUBLESHOOTING
+================================================================================
+
+PROBLEM: Connection timeout
+SOLUTION: Service may be offline. Try again later or contact organizers.
+
+PROBLEM: No flag received
+SOLUTION: Wrong offset or address. Run python3 bruteforce.py to find them.
+
+PROBLEM: "Invalid command" message
+SOLUTION: Payload might have wrong format. Check that you're sending raw bytes.
+
+PROBLEM: Need the actual binary file
+SOLUTION: Check CTF platform for download link or try:
+          wget http://chals.uscc-cyberbowl-2025.ctf.institute/echo_service
+
+================================================================================
+                              FILE DETAILS
+================================================================================
+
+exploit.py (4.7 KB)
+  • Main exploitation script
+  • Modes: test, manual exploit, auto-try common configs
+  • Usage: python3 exploit.py [test | <offset> <addr>]
+
+bruteforce.py (7.2 KB)
+  • Automated parameter discovery
+  • Tries common offsets and address ranges
+  • Smart algorithms to minimize attempts
+  • Usage: python3 bruteforce.py [offset <addr> | address <offset>]
+
+analyze_dump.py (2.2 KB)
+  • Extracts information from binary dump
+  • Lists functions, strings, and libc usage
+  • Provides analysis and next steps
+  • Usage: python3 analyze_dump.py
+
+INDEX.md (4.1 KB)
+  • Main entry point for documentation
+  • Overview of all files and tools
+  • Quick reference commands
+  • Recommended approaches for different skill levels
+
+QUICKSTART.md (4.1 KB)
+  • Fast reference for solving quickly
+  • TL;DR commands and workflows
+  • Troubleshooting quick fixes
+  • Pro tips for efficient exploitation
+
+SOLUTION.md (4.1 KB)
+  • Complete solution walkthrough
+  • Step-by-step instructions
+  • Methods for finding offset and address
+  • Expected behavior and indicators
+
+README.md (2.8 KB)
+  • Detailed challenge documentation
+  • Binary analysis findings
+  • Vulnerability explanation
+  • Exploitation strategy
+
+================================================================================
+                          LEARNING OUTCOMES
+================================================================================
+
+By completing this challenge, you will learn:
+  ✓ How buffer overflows work
+  ✓ Stack memory layout (frames, return addresses)
+  ✓ Return-oriented exploitation basics
+  ✓ Binary analysis fundamentals
+  ✓ Network-based exploitation techniques
+  ✓ Using Python for exploit development
+
+================================================================================
+                          ADDITIONAL RESOURCES
+================================================================================
+
+PRACTICE PLATFORMS:
+  • picoCTF         - https://picoctf.org/
+  • pwnable.kr      - http://pwnable.kr/
+  • exploit.education - https://exploit.education/
+  • HackTheBox      - https://www.hackthebox.eu/
+
+LEARNING MATERIALS:
+  • Buffer Overflow Tutorial (Exploit-DB)
+  • x86 Assembly Guide
+  • Pwntools Documentation
+  • OWASP Binary Exploitation
+
+================================================================================
+                              NEXT STEPS
+================================================================================
+
+1. START HERE: Open INDEX.md in your editor
+2. Choose your path based on your goals:
+   - Quick solve → QUICKSTART.md
+   - Learn → SOLUTION.md  
+   - Deep dive → README.md
+3. Run the appropriate script
+4. Get the flag!
+5. Understand the exploit
+6. Practice similar challenges
+
+================================================================================
+                          FINAL CHECKLIST
+================================================================================
+
+□ Read INDEX.md for overview
+□ Choose approach (quick solve vs learning)
+□ Run appropriate script (bruteforce.py or exploit.py)
+□ Capture the flag
+□ Understand the exploitation technique
+□ Document your solution
+□ Practice similar challenges
+
+================================================================================
+
+                    Good luck, and happy hacking! 🚩
+
+================================================================================
+Created: October 3, 2025
+For: USCC CyberBowl 2025 CTF
+Challenge: Echo Service (500 points)
+================================================================================
