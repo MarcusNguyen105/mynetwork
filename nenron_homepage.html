@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NENRONonline</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🤑</text></svg>"></link>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+            
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                // await response from mongodb backend
+                const result = await response.json();
+                
+                if (response.ok) {
+                    messageDiv.innerHTML = `<div class="success">${result.message}</div>`;
+                } else {
+                    messageDiv.innerHTML = `<div class="error">${result.message}</div>`;
+                }
+            } catch (error) {
+                messageDiv.innerHTML = `<div class="error">Network error occurred</div>`;
+            }
+        });
+    </script>
+</body>
+</html>

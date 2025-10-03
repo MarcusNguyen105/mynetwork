@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('./bg.png');
+    background-size: cover;
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+
+.container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    position: absolute;
+    right: 100px;
+    top: 400px;
+    width: 375px;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    color: navy;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: navy;
+    color: white;
+    padding: 10px 20px;
+    border: rgb(1, 1, 83);
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    margin-top: 10px;
+}
