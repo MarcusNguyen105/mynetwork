@@ -1,0 +1,4 @@
+User-agent: *
+
+# Flag is at /flag but only for the last remaining Termblr admin... hide it from search engines anyway.
+Disallow: /

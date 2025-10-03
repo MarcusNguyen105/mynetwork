@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termblr</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/reblaze.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">termblr</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Tumblr">
+            </div>
+            <div class="nav-icons">
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+                <div class="nav-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <span class="toast-icon">🔥</span>
+            <span class="toast-message">Your post has been REBLAZED! <br>It will be visible to other users in 3-5 seconds.</span>
+            <button class="toast-close" onclick="closeToast()">&times;</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="avatar"></div>
+            <h2 class="blog-title">h4ck3r-k1d</h2>
+            <p class="blog-description">lol just another termblr blog u know me</p>
+            <div class="sidebar-stats">
+                <div class="stat">
+                    <div class="stat-number">127</div>
+                    <div class="stat-label">Posts</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">1.2k</div>
+                    <div class="stat-label">Following</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">856</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="feed">
+            <!-- Post Composer -->
+            <form class="post-composer" method="POST" action="/">
+                <div class="composer-header">
+                    <div class="composer-avatar"></div>
+                    <span class="composer-name">h4ck3r-k1d</span>
+                </div>
+                <div class="composer-body">
+                    <textarea class="composer-textarea" placeholder="What's on your mind?" name="content"
+                        required></textarea>
+                </div>
+                <div class="composer-footer">
+                    <div class="composer-tools">
+                        <button type="button" class="tool-btn" title="Add photo"></button>
+                        <button type="button" class="tool-btn" title="Add video"></button>
+                        <button type="button" class="tool-btn" title="Add link"></button>
+                        <button type="button" class="tool-btn" title="Add quote"></button>
+                    </div>
+                    <div class="composer-footer-buttons">
+                        <button type="submit" class="post-btn tooltip-container" formaction="/reblaze">
+                            🔥 Reblaze
+                            <div class="tooltip">Reblaze this post!</div>
+                            <!-- We've only got one other user on this site (the admin) at this point, but hey! maybe people will want to use this feature anyway -->
+                        </button>
+                        <button type="submit" class="post-btn">
+                            Post
+                            <!-- Just post to your own feed -->
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Feed -->
+            <div id="postFeed">
+                
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-avatar blue"></div>
+                        <div class="post-info">
+                            <div class="post-username">h4ck3r-k1d</div>
+                            <div class="post-timestamp">just now</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-text">
+                            
+                            <Response [200]>
+                            
+                        </div>
+                    </div>
+                </article>
+                
+
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-avatar blue"></div>
+                        <div class="post-info">
+                            <div class="post-username">bluebox</div>
+                            <div class="post-timestamp">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-text">
+                            im laughing so hard because no matter what song you listen to
+                            <br><br>
+                            <img src="/static/images/spiderman.gif">
+                            <br><br>
+                            spiderman dances to the beat
+                            <br><br>
+                            no matter what song<br>
+                            ive been testing it and lauing my butt off for an hour
+                        </div>
+                        <div class="post-tags">
+                            <a href="#" class="tag">#spiderman</a>
+                            <a href="#" class="tag">#funny</a>
+                            <a href="#" class="tag">#rebloggingagain</a>
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-actions">
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>42</span>
+                            </button>
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>Reblog</span>
+                            </button>
+                        </div>
+                        <div class="note-count">127 notes</div>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-avatar purple"></div>
+                        <div class="post-info">
+                            <div class="post-username">jessicaedwardsspellingbee2001</div>
+                            <div class="post-timestamp">4 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <img class="post-image" src="/static/images/era.png" width="100%"
+                            height="auto">
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-actions">
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>1,238</span>
+                            </button>
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>Reblog</span>
+                            </button>
+                        </div>
+                        <div class="note-count">915 notes</div>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-avatar pink"></div>
+                        <div class="post-info">
+                            <div class="post-username">sortatrying</div>
+                            <div class="post-timestamp">12 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-text">
+                            "average person eats 3 spiders a year" factoid actualy just statistical error. average
+                            person eats O spiders per year. Spiders Georg, who lives in cave & eats over 10,000 each
+                            day, is an outlier adn should not have been counted
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-actions">
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>20,102,903</span>
+                            </button>
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>Reblog</span>
+                            </button>
+                        </div>
+                        <div class="note-count">704,102 notes</div>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-avatar purple"></div>
+                        <div class="post-info">
+                            <div class="post-username">sillygoose</div>
+                            <div class="post-timestamp">4 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <img class="post-image" src="/static/images/positivity.jpeg"
+                            width="100%" height="auto">
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-actions">
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>6,299</span>
+                            </button>
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>Reblog</span>
+                            </button>
+                        </div>
+                        <div class="note-count">144 notes</div>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-avatar green"></div>
+                        <div class="post-info">
+                            <div class="post-username">classic-posting</div>
+                            <div class="post-timestamp">16 years ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <img class="post-image" src="/static/images/sky1.jpg" width="100%"
+                            height="auto">
+                        <img class="post-image" src="/static/images/sky2.jpg" width="100%"
+                            height="auto">
+                        <img class="post-image" src="/static/images/sky3.jpg" width="100%"
+                            height="auto">
+                        <img class="post-image" src="/static/images/sky4.jpg" width="100%"
+                            height="auto">
+                        <img class="post-image" src="/static/images/sky5.jpg" width="100%"
+                            height="auto">
+                        <img class="post-image" src="/static/images/sky6.jpg" width="100%"
+                            height="auto">
+                        <img class="post-image" src="/static/images/sky7.jpg" width="100%"
+                            height="auto">
+                        <img class="post-image" src="/static/images/sky8.jpg" width="100%"
+                            height="auto">
+                        <img class="post-image" src="/static/images/sky9.jpg" width="100%"
+                            height="auto">
+                        <img class="post-image" src="/static/images/sky10.jpg" width="100%"
+                            height="auto">
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-actions">
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>190,128</span>
+                            </button>
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>Reblog</span>
+                            </button>
+                        </div>
+                        <div class="note-count">2,093,490 notes</div>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-avatar orange"></div>
+                        <div class="post-info">
+                            <div class="post-username">beetlejuice</div>
+                            <div class="post-timestamp">8 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-text">
+                            not to be insensitive but some of the salem witch trials were so funny girls like “i saw her
+                            at the devils sacrament!!!” girl... what were YOU doing at the devils sacrament 👀
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-actions">
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>7,230</span>
+                            </button>
+                            <button class="action-btn">
+                                <div class="action-icon"></div>
+                                <span>Reblog</span>
+                            </button>
+                        </div>
+                        <div class="note-count">890 notes</div>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+
+</html>
