@@ -1,0 +1,68 @@
+ELF              †4   „!      4   	 (      4   4€4€               T  TT                    € €0  0             ¯¯H  „             ¯¯è   è            h  hhD   D         Påtdp  pp\   \         Qåtd                          Råtd  ¯¯ø   ø         /lib/ld-linux.so.2           GNU                       GNU ãš­š‚Ùí4š@ñ£þðØdï%J            €+"          )Œ8ò‹¬KãÀgUa                G              —              N              i              4              œ                             T                            '              w                            [              9              %              b   €°     p   `°        Œ     A   d°      libc.so.6 _IO_stdin_used exit fopen __isoc99_scanf puts putchar stdin printf fgets strlen memset stdout malloc stderr setvbuf __libc_start_main write free __gmon_start__ GLIBC_2.7 GLIBC_2.1 GLIBC_2.0                                      ii
+   «      ii
+   µ      ii
+   ¿       ü¯  `°  d°  €°  °   °   °   °   °    °   $°    (°   ,° 	  0° 
+  4°   8°   <° 
+  @°   D°   SƒìèO  Ã+  ‹ƒüÿÿÿ…Àtèj   ƒÄ[Ã     ÿ5°ÿ%°    ÿ%°h    éàÿÿÿÿ%°h   éÐÿÿÿÿ%°h   éÀÿÿÿÿ%°h   é°ÿÿÿÿ%°h    é ÿÿÿÿ% °h(   éÿÿÿÿ%$°h0   é€ÿÿÿÿ%(°h8   épÿÿÿÿ%,°h@   é`ÿÿÿÿ%0°hH   éPÿÿÿÿ%4°hP   é@ÿÿÿÿ%8°hX   é0ÿÿÿÿ%<°h`   é ÿÿÿÿ%@°hh   éÿÿÿÿ%D°hp   é ÿÿÿ1í^‰áƒäðPTRhð‹h€‹QVh~Šèoÿÿÿôfffffff‹$Ãffffff¸S°-P°ƒøwÃ¸    …ÀtöU‰åƒìÇ$P°ÿÐÉÃ¶    ¸P°-P°Áø‰ÂÁêÐÑøuÃº    …ÒtöU‰åƒì‰D$Ç$P°ÿÒÉÃ‰ö¼'    €=„° uU‰åƒìè|ÿÿÿÆ„°ÉóÃf¡¯…Àt¸    …ÀtU‰åƒìÇ$¯ÿÐÉéyÿÿÿésÿÿÿU‰åì(  ÇD$   ÇD$    …ôþÿÿ‰$è¬þÿÿÇD$ŒÇ$Œèˆþÿÿ‰Eôƒ}ô uÇ$Œèþÿÿë]‹Eô‰D$ÇD$   …ôþÿÿ‰$èÄýÿÿÇ$
+   èhþÿÿ…ôþÿÿ‰$èúýÿÿ‰D$…ôþÿÿ‰D$Ç$   è þÿÿÇ$
+   è4þÿÿÇ$    è¸ýÿÿU‰åƒì(¡ˆ°‰Eô‹Eô‹@=ä   t2Ç$rŒèqýÿÿÇ$„ŒèeýÿÿÇ$ÆŒèYýÿÿÇ$äŒèMýÿÿëÇ$îŒè?ýÿÿèçþÿÿÇ$    èNýÿÿU‰åƒì(Ç$   èýÿÿ‰Eô‹EôÇ     ‹EôƒÀÇ AdmiÇ@nistÇ@ratofÇ@r ‹EôÇ@Ò  ‹Eô£ˆ°ÉÃU‰åƒì(Ç$   èºüÿÿ‰Eð‹Eð‰D$Ç$þŒètüÿÿ‹EðÇ     Ç$è_üÿÿ‹EðƒÀÇD$   ÇD$    ‰$èýÿÿ‹EðƒÀ‰D$Ç$,èýÿÿÇ$1èüÿÿ‹EðƒÀ‰D$Ç$Nèéüÿÿ¡ˆ°‰Eôë‹Eô‹ ‰Eô‹Eô‹ …Àuï‹Eô‹Uð‰Ç$RèüÿÿÉÃU‰åƒì(¡ˆ°…ÀuÇ$[èýûÿÿéª   Ç$rè¬ûÿÿEè‰D$Ç$Šèyüÿÿ‹Eè‰Eì¡ˆ°9EìuÇ$è½ûÿÿ‹Eì‰$è‚ûÿÿëb¡ˆ°‰Eôë‹Eô‰Eð‹Eô‹ ‰Eôƒ}ô t‹Eô;Eìuäƒ}ô uÇ$Èèxûÿÿë(‹Eô‹‹Eð‰‹Eô‰$è1ûÿÿ‹Eì‰D$Ç$ÜèûÿÿÉÃU‰åƒì(¡ˆ°‰EôÇEð    Ç$ñèëúÿÿë3‹Eô‹@‹UôƒÂ‰D$‰T$‹Eô‰D$Ç$ŽèÂúÿÿ‹Eô‹ ‰EôƒEðƒ}ô uÇÇ$6ŽèäúÿÿÉÃU‰åƒäðƒì ¡d°ÇD$    ÇD$   ÇD$    ‰$èûÿÿ¡€°ÇD$    ÇD$   ÇD$    ‰$èïúÿÿ¡`°ÇD$    ÇD$   ÇD$    ‰$èÊúÿÿè7ýÿÿÇD$    ëÇD$8ŽÇ$°ŽèúÿÿÇ$èŽèúùÿÿD$‰D$Ç$SèÆúÿÿ‹D$ƒøwÂ‹…Xÿàè3ýÿÿë!èðýÿÿëèiüÿÿëè®þÿÿëÇ$    èúÿÿëfffffUW1ÿVSèµúÿÿÃu$  ƒì‹l$0³ÿÿÿèEùÿÿƒÿÿÿ)ÆÁþ…öt'¶    ‹D$8‰,$‰D$‹D$4‰D$ÿ"»ÿÿÿƒÇ9÷ußƒÄ[^_]Ãë
+óÃ  SƒìèCúÿÿÃ$  ƒÄ[Ã     r ./flag    Missing flag file! Please contact support if you see this error on the remote target! Access denied!    Your administrator seems to have the wrong PIN number configured! Please ask them to change it! Good bye! Access granted! Debug: Allocated at %p
+ Enter employee name:  %18s Enter employee 4-digit pin:  %4d Success! There are no employees Employee ID to remove:  %x    You are not allowed to delete the system administrator! Error : Employee ID Success! Removed %p
+ ---
+Listing Employees
+---  
+
+> Employee Id: %p
+> Name: %s
+> PIN: %d
+ 
+        .---.
+      /     \
+      \.@-@./
+      /`\_/`\
+     //  _  \\
+    | \     )|_
+   /`\_`>  <_/ \
+   \__/'---'\__/ ---
+Advanced Employee Management System v1.0
+---
+%s
+    
+Options:
+
+ 1. New Employee
+ 2. Remove Employee
+ 3. Access Secret HR Files
+ 4. List Employees
+ 5. Exit
+
+>  %1d  ‹L‹S‹Z‹a‹h‹;X   
+    õÿÿt   ÷ÿÿ˜   Xøÿÿ´   ÂøÿÿÐ   ùÿÿð   Øùÿÿ  ¤úÿÿ0  ûÿÿP  üÿÿl  €üÿÿ¨         zR |ˆ         $õÿÿ    FJtx ?;*2$"   @   ýöÿÿ»    A…B
+      \   œ÷ÿÿj    A…B
+      x   ê÷ÿÿR    A…B
+NÅ    ˜   øÿÿÄ    A…B
+ÀÅ    ¸   ÀøÿÿÌ    A…B
+ÈÅ    Ø   lùÿÿj    A…B
+fÅ    ø   ¶ùÿÿø    A…B
+   8     œúÿÿa    A…A‡C†AƒN0HAÃAÆAÇAÅ   P  Ðúÿÿ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   à†À†             è„
+   ô‹   ¯         ¯      õþÿo¬   ƒ   Ü
+   É                    °   x            p„   P„             þÿÿo„ÿÿÿo   ðÿÿoæƒ                                                    ¯        &…6…F…V…f…v…†…–…¦…¶…Æ…Ö…æ…ö…†        GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.4) 4.8.4  .symtab .strtab .shstrtab .interp .note.ABI-tag .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rel.dyn .rel.plt .init .text .fini .rodata .eh_frame_hdr .eh_frame .init_array .fini_array .jcr .dynamic .got .got.plt .data .bss .comment                                                     TT                    #          hh                     1          ˆˆ  $                  D   öÿÿo   ¬¬  0                N         ÜÜ  @              V         ƒ  É                  ^   ÿÿÿo   æƒæ  (                k   þÿÿo   „  @                z   	      P„P                   ƒ   	      p„p  x               Œ         è„è  #                  ‡         …                   '         †  â                 ˜         ô‹ô                    ž         Œ  h                 ¦         pp  \                  ´         ÌÌ  d                 ¾         ¯                    Ê         ¯                    Ö         ¯                    Û         ¯  è                ä         ü¯ü                   é          °    H                 ò         H°H                     ø         `°P   ,                   ý      0       P   +                               {                                  4&       -         	              Ä+                                       T          h          ˆ          ¬          Ü          ƒ          æƒ           „          P„     	     p„     
+     è„          …          †     
+     ô‹          Œ          p          Ì          ¯          ¯          ¯          ¯          ü¯           °          H°          `°                                ñÿ   ¯         P†     
+ .   €†     
+ A   À†     
+ W   „°     f   ¯         à†     
+ ™   ¯      ¸            ñÿ            ñÿ¿   ,'      Í   ¯                   ñÿÙ   ¯       ê   ¯      ó   ¯          °        ð‹    
+ ,              H  @†   
+ ^  H°       i  „ˆÄ    
+ m               `°     '             ¡  2ˆR    
+ «             ¼  P°      Ã  ô‹      É  Šj    
+ Ï             á  H°      î             þ              
+               L°     *  Œ     9             K             h             y  €‹a    
+ ‰  d°     š  
+‡»    
+ ž             ±             Â             Ô             ç  Œ°      ì  †     
+ ó  Œ     ú  ˆ°     ÿ  €°       P°        ~Šø    
+ "              6             P  H‰Ì    
+ W  P°     c              }  È‡j    
+ Š  è„       crtstuff.c __JCR_LIST__ deregister_tm_clones register_tm_clones __do_global_dtors_aux completed.6600 __do_global_dtors_aux_fini_array_entry frame_dummy __frame_dummy_init_array_entry aems.c __FRAME_END__ __JCR_END__ __init_array_end _DYNAMIC __init_array_start _GLOBAL_OFFSET_TABLE_ __libc_csu_fini _ITM_deregisterTMCloneTable __x86.get_pc_thunk.bx data_start add printf@@GLIBC_2.0 stderr@@GLIBC_2.0 free@@GLIBC_2.0 add_admin fgets@@GLIBC_2.0 _edata _fini print malloc@@GLIBC_2.0 __data_start puts@@GLIBC_2.0 __gmon_start__ exit@@GLIBC_2.0 __dso_handle _IO_stdin_used strlen@@GLIBC_2.0 __libc_start_main@@GLIBC_2.0 write@@GLIBC_2.0 __libc_csu_init stdin@@GLIBC_2.0 win setvbuf@@GLIBC_2.0 fopen@@GLIBC_2.1 memset@@GLIBC_2.0 putchar@@GLIBC_2.0 _end _start _fp_hw head stdout@@GLIBC_2.0 __bss_start main _Jv_RegisterClasses __isoc99_scanf@@GLIBC_2.7 delete __TMC_END__ _ITM_registerTMCloneTable view_secrets _init
