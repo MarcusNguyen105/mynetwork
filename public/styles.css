@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+    color: #00ff41;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 255, 65, 0.03) 0px,
+            transparent 1px,
+            transparent 2px,
+            rgba(0, 255, 65, 0.03) 3px
+        );
+    pointer-events: none;
+    animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(20px); }
+}
+
+.ascii-container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ff41;
+    border-radius: 10px;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 65, 0.5),
+        inset 0 0 20px rgba(0, 255, 65, 0.1);
+    animation: flicker 3s infinite alternate;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.95; }
+}
+
+#computer-art {
+    white-space: pre;
+    font-size: 14px;
+    line-height: 1.2;
+    text-shadow: 0 0 5px #00ff41;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
+    }
+    to {
+        text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;
+    }
+}
+
+/* Scanline effect */
+.ascii-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        transparent 50%,
+        rgba(0, 255, 65, 0.05) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scanline 0.1s linear infinite;
+}
+
+@keyframes scanline {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 4px; }
+}
+
+/* Scrollbar styling */
+.ascii-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.ascii-container::-webkit-scrollbar-track {
+    background: #0f0f23;
+}
+
+.ascii-container::-webkit-scrollbar-thumb {
+    background: #00ff41;
+    border-radius: 5px;
+}
+
+.ascii-container::-webkit-scrollbar-thumb:hover {
+    background: #00dd35;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #computer-art {
+        font-size: 8px;
+    }
+}
