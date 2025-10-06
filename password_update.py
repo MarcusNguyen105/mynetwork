@@ -1,0 +1,47 @@
+'''currPassword, represents the current password.
+newPassword, represents the new password.
+'''
+
+def funcUpdation(currPassword, newPassword):
+    # Write your code here
+    # Find the Longest Common Subsequence (LCS) length
+    # Total operations = deletions + insertions
+    # deletions = len(currPassword) - LCS_length
+    # insertions = len(newPassword) - LCS_length
+    
+    m = len(currPassword)
+    n = len(newPassword)
+    
+    # Create a DP table to store LCS lengths
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    
+    # Build the LCS length table
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if currPassword[i - 1] == newPassword[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+            else:
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+    
+    lcs_length = dp[m][n]
+    
+    # Calculate total operations
+    deletions = m - lcs_length
+    insertions = n - lcs_length
+    total_operations = deletions + insertions
+    
+    return total_operations
+
+def main():
+    #Input for currPassword
+    currPassword = str(input())
+    
+    #Input for newPassword
+    newPassword = str(input())
+    
+    
+    result = funcUpdation(currPassword, newPassword)
+    print(result)
+
+if __name__ == "__main__":
+    main()
