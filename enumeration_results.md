@@ -49,10 +49,10 @@
 
 ### Notes:
 - **Two web servers** (port 80 and 8080) - Check both for different content
-- **WinRM (5985)** - Check for weak credentials, may allow remote access
-- **SMB (139)** - Enumerate shares, check for anonymous access
+- **WinRM (5985)** - ✅ Tested: Requires authentication, empty credentials failed
+- **SMB (139)** - ✅ Tested: Nmap scripts didn't enumerate shares/users (may need port 445 or different tools)
 - **MSRPC (135)** - May reveal user accounts and system info
-- Check for exposed files, directories, or web applications on both HTTP ports
+- **Next**: Try enum4linux, smbclient, check port 445, and thoroughly examine web servers
 
 ---
 
