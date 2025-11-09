@@ -1,0 +1,16 @@
+FLAGS FOUND:
+============
+
+10.12.0.136 (Windows):
+- Flag 1: CSEC-3961-QOTD (found on port 17 - QOTD service via nmap scan)
+  Method: Direct connection to QOTD service (port 17)
+  Hint from service: "This looks like a new, fully patched system. Maybe there is a vulnerable, 3rd party service installed instead."
+
+TOTAL: 1/12 flags found (3 flags per system × 4 systems)
+
+NEXT TARGETS:
+=============
+1. 10.12.0.42 - ProFTPD 1.3.5 (CVE-2015-3306 mod_copy vulnerability)
+2. 10.12.0.111 - SMB enumeration, IIS on port 8080
+3. 10.12.0.136 - RDP, MSRPC enumeration (already found flag 1)
+4. 10.12.0.194 - Apache web enumeration, SSH
